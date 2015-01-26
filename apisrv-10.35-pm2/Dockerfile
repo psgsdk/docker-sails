@@ -12,6 +12,10 @@ RUN mkdir /server
 # Define mountable directories.
 VOLUME ["/server"]
 
+# Add psg-api app
+RUN mkdir /server/psgapi
+ADD psgapi/ /server/psgapi/
+
 # Define working directory.
 WORKDIR /server
 
