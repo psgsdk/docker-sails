@@ -6,6 +6,8 @@ FROM node:0.10.35-slim
 
 MAINTAINER PSG Team psgsdk@gmail.com>
 
+RUN apt-get update
+RUN apt-get install nano
 RUN npm install -g sails@0.10.5 pm2@0.12.2 grunt bower npm-check-updates
 RUN mkdir /server
 
