@@ -2,7 +2,7 @@
 # Dockerfile for PSG-API server
 ################################
 
-FROM node:0.10.35-slim
+FROM node:0.10.36-slim
 
 MAINTAINER PSG Team psgsdk@gmail.com>
 
@@ -20,7 +20,7 @@ ADD psgapi/ /server/psgapi/
 
 # Install app modules
 WORKDIR /server/psgapi
-# RUN npm install
+RUN npm install
 
 # Define working directory.
 WORKDIR /server
