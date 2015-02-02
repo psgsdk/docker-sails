@@ -20,7 +20,7 @@ ADD psgapi/ /server/psgapi/
 
 # Install app modules
 WORKDIR /server/psgapi
-RUN npm install
+# RUN npm install
 
 # Define working directory.
 WORKDIR /server
