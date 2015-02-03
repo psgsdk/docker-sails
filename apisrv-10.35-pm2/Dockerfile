@@ -24,12 +24,12 @@ RUN apt-get update \
 VOLUME ["/server"]
 
 # Add psg-api app
-RUN mkdir /server/psgapi
-ADD psgapi/ /server/psgapi/
+#RUN mkdir /server/psgapi
+#ADD psgapi/ /server/psgapi/
 
 # Install app modules
-WORKDIR /server/psgapi
-RUN npm install
+#WORKDIR /server/psgapi
+#RUN npm install
 
 # Define working directory.
 WORKDIR /server
