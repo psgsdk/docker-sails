@@ -2,14 +2,23 @@
 # Dockerfile for PSG-API server
 ################################
 
-FROM node:0.10.36-slim
+#FROM node:0.10.36-slim
 
+FROM ubuntu:14.04
 MAINTAINER PSG Team psgsdk@gmail.com>
 
-RUN apt-get update
-RUN apt-get install nano
-RUN npm install -g sails@0.10.5 pm2@0.12.2 grunt bower npm-check-updates
-RUN mkdir /server
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update \
+	&& apt-get update --fix-missing \
+	&& apt-get install -y curl \
+	&& curl -sL https://deb.nodesource.com/setup | sudo bash - \
+	&& apt-get update \
+	&& apt-get update --fix-missing \
+	&& apt-get install -y nodejs \
+	&& apt-get install nano \
+	&& npm install -g sails@0.10.5 pm2@0.12.2 grunt bower npm-check-updates \
+	&& mkdir /server 
 
 # Define mountable directories.
 VOLUME ["/server"]
