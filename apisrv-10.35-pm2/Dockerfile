@@ -7,9 +7,9 @@
 FROM ubuntu:14.04
 MAINTAINER PSG Team psgsdk@gmail.com>
  
-ENV DEBIAN_FRONTEND noninteractive
+#ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update \
+#RUN apt-get update \
 #	&& apt-get update --fix-missing \
 #	&& apt-get install -y curl \
 #	&& curl -sL https://deb.nodesource.com/setup | sudo bash - \
@@ -21,7 +21,7 @@ RUN apt-get update \
 	&& mkdir /server 
 
 # Define mountable directories.
-VOLUME ["/server"]
+#VOLUME ["/server"]
 
 # Add psg-api app
 #RUN mkdir /server/psgapi
@@ -32,7 +32,7 @@ VOLUME ["/server"]
 #RUN npm install
 
 # Define working directory.
-WORKDIR /server
+#WORKDIR /server
 
 # Expose ports.
-EXPOSE 1337
+#EXPOSE 1337
