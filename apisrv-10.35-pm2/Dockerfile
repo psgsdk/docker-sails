@@ -22,10 +22,10 @@ RUN apt-get update \
 	&& npm install -g sails pm2 grunt bower npm-check-updates \
 	&& mkdir /server    
 
-RUN chmod 775 /server
-
 # Define mountable directories.
 VOLUME ["/server"]
+
+RUN chmod 777 /server 
 
 # Add psg-api app
 RUN mkdir /server/psgapi
