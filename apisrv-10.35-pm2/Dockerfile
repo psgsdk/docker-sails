@@ -9,8 +9,6 @@ MAINTAINER PSG Team psgsdk@gmail.com>
  
 ENV DEBIAN_FRONTEND noninteractive
 
-CMD []
-
 RUN apt-get update \
 	&& apt-get update --fix-missing \
 	&& apt-get install -y curl \
@@ -40,3 +38,4 @@ WORKDIR /server
 
 # Expose ports.
 EXPOSE 1337
+
