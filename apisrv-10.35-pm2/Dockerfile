@@ -15,7 +15,8 @@ RUN apt-get update \
 	&& curl -sL https://deb.nodesource.com/setup | sudo bash - \
 	&& apt-get update \
 	&& apt-get update --fix-missing \
-	&& apt-get install -y nodejs \
+	#&& apt-get install -y nodejs \
+	&& apt-get install -y nodejs-legacy
 	&& apt-get install nano \
 	&& npm install -g sails@0.10.5 pm2@0.12.2 grunt bower npm-check-updates \
 	&& mkdir /server  
