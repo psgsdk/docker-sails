@@ -19,7 +19,7 @@ RUN apt-get update \
 	&& apt-get install -y nodejs-legacy \
 	&& apt-get install nano \
 	&& npm install -g sails@0.10.5 pm2@0.12.2 grunt bower npm-check-updates \
-	&& mkdir /server   
+	&& mkdir /server    
 
 # Define mountable directories.
 VOLUME ["/server"]
