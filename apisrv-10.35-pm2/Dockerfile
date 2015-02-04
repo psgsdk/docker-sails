@@ -25,8 +25,6 @@ RUN apt-get update \
 # Define mountable directories.
 VOLUME ["/server"]
 
-RUN chmod 777 /server 
-
 # Add psg-api app
 RUN mkdir /server/psgapi
 ADD psgapi/ /server/psgapi/
@@ -40,4 +38,6 @@ WORKDIR /server
 
 # Expose ports.
 EXPOSE 1337
+
+CMD ["/bin/sh"]
 
