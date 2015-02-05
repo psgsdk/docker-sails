@@ -52,7 +52,7 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-  host: 'localhost',
+  host: process.env.REDIS_PORT_6379_TCP_ADDR,
   port: 6379,
   ttl: 43200,
   db: 0,
