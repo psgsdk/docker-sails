@@ -24,7 +24,7 @@ RUN apt-get update \
 	&& mkdir -p /var/log/supervisor \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
 	&& apt-get autoremove -y \
-	&& mkdir -p /server/psgapi && mkdir /backup
+	&& mkdir -p /server && mkdir /backup
 
 ADD ./config/supervisord.conf /etc/supervisor/conf.d/supervisord-nodejs.conf
 
@@ -37,7 +37,7 @@ VOLUME ["/backup"]
 ADD psgapi/ /server/
 
 # Install app modules
-WORKDIR /server/psgapi
+WORKDIR /server
 RUN npm install
 
 # Expose ports.
