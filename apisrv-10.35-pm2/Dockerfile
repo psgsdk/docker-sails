@@ -20,11 +20,11 @@ RUN apt-get update \
 #	&& npm install -g express sails pm2 grunt bower npm-check-updates \
 #	&& npm install -g mocha should assert \
 #	&& apt-get update --fix-missing \
-#	&& apt-get install -y supervisor \
+	&& apt-get install -y supervisor \
 #	&& mkdir -p /var/log/supervisor \
 #	&& apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
 #	&& apt-get autoremove -y \
-#	&& mkdir -p /server/psgapi   
+	&& mkdir -p /server/psgapi   
 
 ADD ./config/supervisord.conf /etc/supervisor/conf.d/supervisord-nodejs.conf
 
