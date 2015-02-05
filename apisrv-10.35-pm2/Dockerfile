@@ -26,7 +26,7 @@ RUN apt-get update \
 	&& mkdir -p /var/log/supervisor \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
 	&& apt-get autoremove -y \
-	&& mkdir /server    
+	&& mkdir /server && mkdir /server/psgapi   
 
 ADD ./config/supervisord.conf /etc/supervisor/conf.d/supervisord-nodejs.conf
 
@@ -36,8 +36,7 @@ RUN ln -s /usr/bin/nodejs /usr/local/bin/node
 VOLUME ["/server"]
 
 # Add psg-api app
-RUN mkdir /server/psgapi
-ADD psgapi/ /server/psgapi/
+ADD psgapi/ /server/
 
 # Install app modules
 WORKDIR /server/psgapi
