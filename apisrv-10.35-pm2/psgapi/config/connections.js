@@ -32,7 +32,7 @@ module.exports.connections = {
   ***************************************************************************/
   authsql: {
     adapter: 'sails-postgresql',
-    host: 'localhost',
+    host: process.env.PG_PORT_5432_TCP_ADDR,
     port:5432,
     user: 'postgres',
     password: '123456',

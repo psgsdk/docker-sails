@@ -1,0 +1,29 @@
+api:
+  image: psgsdk/psg-api:stable
+  links:
+    - "pg:pg"
+    - "redis:redis"
+  ports:
+    - "82:1337"
+  environment:
+    VIRTUAL_HOST: www.psgapi.com,psgapi.com
+  volumes_from:
+    - storage
+pg:
+  image: postgres:9.4
+  environment:
+    POSTGRES_PASSWORD: 123456
+    POSTGRES_USER: postgres
+  volumes_from:
+    - storage
+redis:
+  image: redis
+  volumes_from:
+    - storage
+storage:
+  image: busybox
+  command: echo "data storage ready"
+  volumes:
+    - /data
+    - /var/lib/postgresql/data
+    - /backup

@@ -11,7 +11,7 @@
 
 module.exports.authcfg = {
     redisport: 6379,
-    redisip: '127.0.0.1',
+    redisip: process.env.REDIS_PORT_6379_TCP_ADDR,
     authtime: 60,
     skey: 'xyz',
     cptpass: 'Cd6F3Efeq*_1~'
