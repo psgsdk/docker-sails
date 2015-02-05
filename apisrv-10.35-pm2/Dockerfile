@@ -43,9 +43,6 @@ ADD psgapi/ /server/psgapi/
 WORKDIR /server/psgapi
 RUN npm install
 
-# Define working directory.
-WORKDIR /server/psgapi
-
 # Expose ports.
 EXPOSE 3000
 EXPOSE 1337
